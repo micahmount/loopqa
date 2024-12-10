@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Test Case 1: Verify authentication in 'Web Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Web Application",
+    "task": "Implement user authentication",
+    "tags": ["Feature", "High Priority"]
+  },
+  {
+    "name": "Test Case 2: Verify navigation bug fix in 'Web Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Web Application",
+    "task": "Fix navigation bug",
+    "tags": ["Bug"]
+  },
+  {
+    "name": "Test Case 3: Verify design system updates in 'Web Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Web Application",
+    "task": "Design system updates",
+    "column": "In Progress",
+    "tags": ["Design"]
+  },
+  {
+    "name": "Test Case 4: Verify push notification system in 'Mobile Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Mobile Application",
+    "task": "Push notification system",
+    "tags": ["Feature"]
+  },
+  {
+    "name": "Test Case 5: Verify offline mode in 'Mobile Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Mobile Application",
+    "task": "Offline mode",
+    "column": "In Progress",
+    "tags": ["Feature", "High Priority"]
+  },
+  {
+    "name": "Test Case 6: Verify app icon design in 'Mobile Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Mobile Application",
+    "task": "App icon design",
+    "column": "Done",
+    "tags": ["Design"]
+  }
+]
