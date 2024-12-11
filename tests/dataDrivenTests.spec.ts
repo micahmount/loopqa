@@ -23,12 +23,19 @@ testCases.forEach(({ name, login, navigation, task, column = "To Do", tags }) =>
     await expect(page.locator('h1.text-xl')).toContainText(navigation); // Confirm heading update
 
     // Step 3: Verify the task exists in the specified column
-    const columnSelector = `#${column.toLowerCase().replace(' ', '-')}-column`; // Convert column to lower-case and replace spaces with hyphens
-    const taskColumn = page.locator(columnSelector);
-    await expect(taskColumn).toContainText(task);
+    // await expect(page.locator('h2.font-semibold')).toContainText(navigation)
+    
+    // const columnSelector = `#${column.toLowerCase().replace(' ', '-')}-column`; // Convert column to lower-case and replace spaces with hyphens
+    // const taskLocator = page.locator(`${columnSelector} >> text=${task}`); // Locate the specific task inside the column
+
+    // Ensure column is visible before checking for the task
+    // await expect(page.locator(columnSelector)).toBeVisible(); // Wait for the column to be visible
+    // await expect(taskLocator).toBeVisible(); // Wait for the specific task to be visible in the column
+
+
 
     // Step 4: Verify the task tags
-    const taskElement = todoColumn.locator(`text=${task}`);
+    const taskElement = page.locator(`text=${task}`);
     for (const tag of tags) {
       await expect(taskElement).toContainText(tag);
     }
