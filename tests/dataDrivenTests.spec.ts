@@ -15,7 +15,7 @@ testCases.forEach(({ name, login, navigation, task, column, tags }) => {
     await page.fill('#username', login.username);
     await page.fill('#password', login.password);
     await page.getByRole('button', {name: 'Sign in'}).click();
-    await expect(page.locator('h1.text-xl')).toContainText(navigation); // Confirm heading update
+    await expect(page.locator('h1.text-lg')).toContainText('Projects'); // Confirm that we're logging into the app by looking for the Projects heading.
 
     // Step 2: Navigate to specific application
 
