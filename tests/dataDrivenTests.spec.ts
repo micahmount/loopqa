@@ -22,26 +22,22 @@ testCases.forEach(({ name, login, navigation, task, column, tags }) => {
     await page.click(`nav >> text=${navigation}`); // Click the navigation button
     await expect(page.locator('h1.text-xl')).toContainText(navigation); // Confirm heading update
 
-    // Step 3: Verify the task exists in the specified column
-    // Locate the column dynamically based on its text content within the main element
-    const columnSelector = `main div:has-text("${column}")`; // Ensure the column is a child of "main"
+    // Locate the column within the main element
+    const columnSelector = `main div:has-text("${column}")`;
     const columnLocator = page.locator(columnSelector);
 
-    await expect(columnLocator).toBeVisible(); // Verify the column is visible
+    // Verify the column is visible
+    await expect(columnLocator.first()).toBeVisible();
 
-    // Locate the task as a descendant of the column
-    const taskSelector = `div:has-text("${task}")`; // Selector for the task
-    const taskLocator = columnLocator.locator(taskSelector);
+    // Step 3: Verify the desired task exists as a descendant of the designated column
+    const taskLocator = columnLocator.locator(`div:has-text("${task}")`);
 
-    await expect(taskLocator).toBeVisible(); // Verify the task is visible within the column
+    await expect(taskLocator.first()).toBeVisible();
 
-    // Step 4: Verify the task tags
+    // Step 4: Verify the task tags as descendants of the task
     for (const tag of tags) {
-      const tagSelector = `div:has-text("${tag}")`; // Selector for each tag
-      const tagLocator = taskLocator.locator(tagSelector);
-
-      await expect(tagLocator).toBeVisible(); // Verify each tag is visible within the task
+      const tagLocator = taskLocator.locator(`div:has-text("${tag}")`);
+      await expect(tagLocator.first()).toBeVisible();
     }
-
   });
 });
