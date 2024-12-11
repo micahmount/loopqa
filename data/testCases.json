@@ -22,5 +22,13 @@
     "task": "Design system updates",
     "column": "In Progress",
     "tags": ["Design"]
+  },
+  {
+    "name": "Test Case 4: Verify push notification system in 'Mobile Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Mobile Application",
+    "column": "To Do",
+    "task": "Push notification system",
+    "tags": ["Feature"]
   }
 ]
