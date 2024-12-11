@@ -3,6 +3,7 @@
     "name": "Test Case 1: Verify authentication in 'Web Application'",
     "login": { "username": "admin", "password": "password123" },
     "navigation": "Web Application",
+    "column": "To Do",
     "task": "Implement user authentication",
     "tags": ["Feature", "High Priority"]
   }

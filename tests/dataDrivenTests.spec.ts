@@ -8,7 +8,7 @@ const testCases = JSON.parse(fs.readFileSync(testCasesPath, 'utf-8'));
 const appURI = 'https://animated-gingersnap-8cf7f2.netlify.app/'
  
 // Data-driven test
-testCases.forEach(({ name, login, navigation, task, column = "To Do", tags }) => {
+testCases.forEach(({ name, login, navigation, task, column, tags }) => {
   test(name, async ({ page }) => {
     // Step 1: Login
     await page.goto(appURI);
@@ -23,21 +23,25 @@ testCases.forEach(({ name, login, navigation, task, column = "To Do", tags }) =>
     await expect(page.locator('h1.text-xl')).toContainText(navigation); // Confirm heading update
 
     // Step 3: Verify the task exists in the specified column
-    // await expect(page.locator('h2.font-semibold')).toContainText(navigation)
-    
-    // const columnSelector = `#${column.toLowerCase().replace(' ', '-')}-column`; // Convert column to lower-case and replace spaces with hyphens
-    // const taskLocator = page.locator(`${columnSelector} >> text=${task}`); // Locate the specific task inside the column
+    // Locate the column dynamically based on its text content within the main element
+    const columnSelector = `main div:has-text("${column}")`; // Ensure the column is a child of "main"
+    const columnLocator = page.locator(columnSelector);
 
-    // Ensure column is visible before checking for the task
-    // await expect(page.locator(columnSelector)).toBeVisible(); // Wait for the column to be visible
-    // await expect(taskLocator).toBeVisible(); // Wait for the specific task to be visible in the column
+    await expect(columnLocator).toBeVisible(); // Verify the column is visible
 
+    // Locate the task as a descendant of the column
+    const taskSelector = `div:has-text("${task}")`; // Selector for the task
+    const taskLocator = columnLocator.locator(taskSelector);
 
+    await expect(taskLocator).toBeVisible(); // Verify the task is visible within the column
 
     // Step 4: Verify the task tags
-    const taskElement = page.locator(`text=${task}`);
     for (const tag of tags) {
-      await expect(taskElement).toContainText(tag);
+      const tagSelector = `div:has-text("${tag}")`; // Selector for each tag
+      const tagLocator = taskLocator.locator(tagSelector);
+
+      await expect(tagLocator).toBeVisible(); // Verify each tag is visible within the task
     }
+
   });
 });
