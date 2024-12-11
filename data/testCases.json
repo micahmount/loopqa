@@ -38,5 +38,13 @@
     "task": "Offline mode",
     "column": "In Progress",
     "tags": ["Feature", "High Priority"]
+  },
+  {
+    "name": "Test Case 6: Verify app icon design in 'Mobile Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Mobile Application",
+    "task": "App icon design",
+    "column": "Done",
+    "tags": ["Design"]
   }
 ]
