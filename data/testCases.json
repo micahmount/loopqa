@@ -14,5 +14,13 @@
     "column": "To Do",
     "task": "Fix navigation bug",
     "tags": ["Bug"]
+  },
+  {
+    "name": "Test Case 3: Verify design system updates in 'Web Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Web Application",
+    "task": "Design system updates",
+    "column": "In Progress",
+    "tags": ["Design"]
   }
 ]
