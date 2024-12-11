@@ -30,5 +30,13 @@
     "column": "To Do",
     "task": "Push notification system",
     "tags": ["Feature"]
+  },
+  {
+    "name": "Test Case 5: Verify offline mode in 'Mobile Application'",
+    "login": { "username": "admin", "password": "password123" },
+    "navigation": "Mobile Application",
+    "task": "Offline mode",
+    "column": "In Progress",
+    "tags": ["Feature", "High Priority"]
   }
 ]
