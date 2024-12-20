@@ -83,3 +83,28 @@ The task focuses on verifying the hierarchical relationships between elements in
 5. **Performance Optimization**:
 
    - Optimize tests by minimizing redundant assertions and focusing on critical validations.
+
+## Utilization
+
+### Setup
+
+There is a playwright.config.ts file included in the project, to initialize the project for the first time after downloading the repo, run:
+
+`npx playwright init`
+
+## Listing available tests
+
+Now that the project has been initialized, list all available tests with:
+`npx playwright test --list`
+
+### Running tests
+
+Once the project has been initialized, to run all tests in the tests/ directory run:
+
+`npx playwright test`
+
+Or specify a test either by calling the filename or using the -g flag and calling the specific test name:
+
+`npx playwright test $fileName`
+or
+`npx playwright test -g $testName`
