@@ -1,50 +1,44 @@
 [
   {
     "name": "Test Case 1: Verify authentication in 'Web Application'",
-    "login": { "username": "admin", "password": "password123" },
-    "navigation": "Web Application",
-    "column": "To Do",
+    "board": "Web Application Main web",
+    "column": "To Do (2)Implement user",
     "task": "Implement user authentication",
     "tags": ["Feature", "High Priority"]
   },
   {
-    "name": "Test Case 2: Verify navigation bug fix in 'Web Application'",
-    "login": { "username": "admin", "password": "password123" },
-    "navigation": "Web Application",
-    "column": "To Do",
+    "name": "Test Case 2: Verify task 'Fix navigation bug' in 'Web Application'",
+    "board": "Web Application Main web",
+    "column": "To Do (2)Implement user",
     "task": "Fix navigation bug",
     "tags": ["Bug"]
   },
   {
-    "name": "Test Case 3: Verify design system updates in 'Web Application'",
-    "login": { "username": "admin", "password": "password123" },
-    "navigation": "Web Application",
+    "name": "Test Case 3: Verify task 'design system updates' in 'Web Application'",
+    "board": "Web Application Main web",
+    "column": "In Progress (1)Design system",
     "task": "Design system updates",
-    "column": "In Progress",
     "tags": ["Design"]
   },
   {
-    "name": "Test Case 4: Verify push notification system in 'Mobile Application'",
-    "login": { "username": "admin", "password": "password123" },
-    "navigation": "Mobile Application",
-    "column": "To Do",
+    "name": "Test Case 4: Verify task 'push notification system' in 'Mobile Application'",
+    "board": "Mobile Application Native",
+    "column": "To Do (1)Push notification",
     "task": "Push notification system",
     "tags": ["Feature"]
   },
   {
     "name": "Test Case 5: Verify offline mode in 'Mobile Application'",
-    "login": { "username": "admin", "password": "password123" },
-    "navigation": "Mobile Application",
+    "board": "Mobile Application Native",
+    "column": "In Progress (1)Offline",
     "task": "Offline mode",
-    "column": "In Progress",
     "tags": ["Feature", "High Priority"]
   },
   {
     "name": "Test Case 6: Verify app icon design in 'Mobile Application'",
-    "login": { "username": "admin", "password": "password123" },
-    "navigation": "Mobile Application",
+    "board": "Mobile Application Native",
+    "column": "Done (1)App icon designCreate",
     "task": "App icon design",
-    "column": "Done",
     "tags": ["Design"]
   }
 ]
